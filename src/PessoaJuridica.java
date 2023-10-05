@@ -1,7 +1,4 @@
-import jdk.nashorn.internal.runtime.regexp.joni.Regex;
 
-import java.awt.*;
-import java.util.regex.Pattern;
 
 public class PessoaJuridica extends Pessoa {
     public String cnpj;
@@ -21,19 +18,4 @@ public class PessoaJuridica extends Pessoa {
             return rendimento * .09f;
         }
     }
-    public boolean validarCnpj(String cnpj) {
-        boolean retornoCnpjValido = Pattern.matches("^(\\d{14})|(\\d{2}\\.\\d{3}\\.\\d{3}/\\d{4}-\\d{2})$", cnpj);
-        if (retornoCnpjValido) {
-            if (cnpj.length() == 14) {
-                String subStringCnpj14 = cnpj.substring(8, 12);
-                if (subStringCnpj14.equals("0001")) {
-                    return true;
-                }
-                return false;
-            }
-        }
-        return false;
-    }
-
-
 }

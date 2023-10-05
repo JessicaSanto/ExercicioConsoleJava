@@ -1,11 +1,9 @@
-
-import java.time.LocalDate;
-
-import java.time.format.DateTimeFormatter;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class PessoaFisica extends Pessoa {
     public String cpf;
-    public DateTimeFormatter dataNasc;
+    public String dataNasc;
 
     public float CalcularImposto(float rendimento) {
         if (rendimento <= 1500) {
@@ -15,7 +13,6 @@ public class PessoaFisica extends Pessoa {
             float resultado = (rendimento / 100) * 2;
 
             return resultado;
-
         } else if (rendimento > 3500 && rendimento <= 6000) {
             float resultado = (rendimento / 100) * 3.5f;
 
@@ -27,10 +24,6 @@ public class PessoaFisica extends Pessoa {
             return resultado;
         }
     }
+}
 
-//    public boolean validarDataNasc(LocalDate dataNasc) {
-//
-//
-//    }
 
-    }
